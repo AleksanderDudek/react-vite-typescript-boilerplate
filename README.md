@@ -1,8 +1,16 @@
-# React Pexels Explorer — Frontend Boilerplate
+# React Pexels Explorer — Frontend Boilerplate - STEAL THIS REPO
 
 A production-ready React + TypeScript boilerplate featuring Vite, Vitest, Docker,
 SonarQube, GitHub Actions CI/CD, Husky git hooks, and a working demo app that
 searches photos and videos via the [Pexels API](https://www.pexels.com/api/).
+
+Use it as you wish. I have built it only as a showcase in mind to display concepts I take into account.
+
+https://aleksanderdudek.github.io/react-vite-typescript-boilerplate/
+
+https://github.com/user-attachments/assets/75da8075-56c4-4741-9002-bc17300e236d
+
+
 
 ---
 
