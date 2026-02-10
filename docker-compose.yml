@@ -1,0 +1,35 @@
+# ============================================================
+# Docker Compose
+# ============================================================
+# Usage:
+#   Development:  docker compose up dev
+#   Production:   docker compose up app
+# ============================================================
+
+services:
+  # --- Development server (hot reload) ---
+  dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=development
+
+  # --- Production build ---
+  app:
+    build:
+      context: .
+      args:
+        VITE_PEXELS_API_KEY: ${VITE_PEXELS_API_KEY}
+        VITE_APP_TITLE: ${VITE_APP_TITLE:-Pexels Explorer}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-https://api.pexels.com}
+    ports:
+      - "3000:80"
+    restart: unless-stopped

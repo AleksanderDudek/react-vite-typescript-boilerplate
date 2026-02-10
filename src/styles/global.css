@@ -1,0 +1,130 @@
+/* ============================================================
+   Design Tokens & Global Styles
+   ============================================================ */
+
+:root {
+  --color-bg: #0f1117;
+  --color-surface: #181a20;
+  --color-surface-alt: #1e2028;
+  --color-border: #2a2d38;
+  --color-text: #e4e6ec;
+  --color-text-muted: #8b8fa4;
+  --color-accent: #6c5ce7;
+  --color-accent-alpha: rgba(108, 92, 231, 0.2);
+
+  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+  --max-width: 1200px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   Page Layout
+   ============================================================ */
+
+.home-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.home-page__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.home-page__title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--color-accent), #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-page__subtitle {
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.home-page__results-count {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.home-page__load-more {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.home-page__load-more-btn {
+  padding: 0.65rem 2rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.home-page__load-more-btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.home-page__loading,
+.home-page__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 3rem 0;
+  font-size: 1.1rem;
+}
+
+.home-page__footer {
+  text-align: center;
+  padding-top: 3rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
