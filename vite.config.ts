@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    // GitHub Pages deploys to a subdirectory: https://<user>.github.io/<repo>/
+    // In production, set base to the repo name. Locally it stays "/".
+    base: mode === "production" ? "/react-vite-typescript-boilerplate/" : "/",
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
