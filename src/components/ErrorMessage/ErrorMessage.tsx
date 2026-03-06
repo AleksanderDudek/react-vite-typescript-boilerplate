@@ -13,9 +13,7 @@ export function ErrorMessage({ error, onRetry }: ErrorMessageProps) {
       <p style={{ fontSize: "1.5rem", margin: "0 0 0.5rem" }}>⚠️</p>
       <p style={{ fontWeight: 600 }}>{isAuthError ? "Invalid API Key" : "Something went wrong"}</p>
       <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem", margin: "0.25rem 0" }}>
-        {isAuthError
-          ? "Please check your VITE_PEXELS_API_KEY in .env.local"
-          : error.message}
+        {isAuthError ? "Please check your VITE_PEXELS_API_KEY in .env.local" : error.message}
       </p>
       {onRetry && (
         <button

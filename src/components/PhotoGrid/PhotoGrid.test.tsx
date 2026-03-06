@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { PhotoGrid } from "@/components/PhotoGrid";
-import { mockPhoto } from "../fixtures";
+import { PhotoGrid } from "./PhotoGrid";
+import { mockPhoto } from "@/__tests__/fixtures";
 
 describe("PhotoGrid", () => {
   it("renders nothing when photos array is empty", () => {

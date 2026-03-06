@@ -5,11 +5,15 @@
 }
 
 @media (max-width: 900px) {
-  .photo-grid { columns: 2; }
+  .photo-grid {
+    columns: 2;
+  }
 }
 
 @media (max-width: 540px) {
-  .photo-grid { columns: 1; }
+  .photo-grid {
+    columns: 1;
+  }
 }
 
 .photo-grid__item {
@@ -20,7 +24,9 @@
   overflow: hidden;
   position: relative;
   text-decoration: none;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 .photo-grid__item:hover {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { MediaType } from "@/types";
+import { MEDIA_TYPE_OPTIONS, DEFAULT_MEDIA_TYPE, SEARCH_PLACEHOLDER } from "./SearchBar.consts";
 import "./SearchBar.css";
 
 interface SearchBarProps {
@@ -9,7 +10,7 @@ interface SearchBarProps {
 
 export function SearchBar({ onSearch, loading }: SearchBarProps) {
   const [query, setQuery] = useState("");
-  const [mediaType, setMediaType] = useState<MediaType>("photos");
+  const [mediaType, setMediaType] = useState<MediaType>(DEFAULT_MEDIA_TYPE);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,31 +25,25 @@ export function SearchBar({ onSearch, loading }: SearchBarProps) {
         <input
           type="text"
           className="search-bar__input"
-          placeholder="Search for photos & videos..."
+          placeholder={SEARCH_PLACEHOLDER}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search query"
         />
         <div className="search-bar__controls">
           <div className="search-bar__toggle" role="radiogroup" aria-label="Media type">
-            <button
-              type="button"
-              role="radio"
-              aria-checked={mediaType === "photos"}
-              className={`search-bar__toggle-btn ${mediaType === "photos" ? "active" : ""}`}
-              onClick={() => setMediaType("photos")}
-            >
-              Photos
-            </button>
-            <button
-              type="button"
-              role="radio"
-              aria-checked={mediaType === "videos"}
-              className={`search-bar__toggle-btn ${mediaType === "videos" ? "active" : ""}`}
-              onClick={() => setMediaType("videos")}
-            >
-              Videos
-            </button>
+            {MEDIA_TYPE_OPTIONS.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                role="radio"
+                aria-checked={mediaType === option.value}
+                className={`search-bar__toggle-btn ${mediaType === option.value ? "active" : ""}`}
+                onClick={() => setMediaType(option.value)}
+              >
+                {option.label}
+              </button>
+            ))}
           </div>
           <button type="submit" className="search-bar__submit" disabled={loading || !query.trim()}>
             {loading ? "Searching..." : "Search"}

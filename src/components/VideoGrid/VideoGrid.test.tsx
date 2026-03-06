@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { VideoGrid } from "@/components/VideoGrid";
-import { mockVideo } from "../fixtures";
+import { VideoGrid } from "./VideoGrid";
+import { mockVideo } from "@/__tests__/fixtures";
 
 describe("VideoGrid", () => {
   it("renders nothing when videos array is empty", () => {

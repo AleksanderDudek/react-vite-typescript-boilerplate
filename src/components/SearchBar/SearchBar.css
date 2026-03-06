@@ -19,7 +19,9 @@
   border-radius: 12px;
   background: var(--color-surface);
   color: var(--color-text);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .search-bar__input:focus {
@@ -70,7 +72,9 @@
   background: var(--color-accent);
   color: #fff;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.1s;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
 }
 
 .search-bar__submit:hover:not(:disabled) {

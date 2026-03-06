@@ -11,9 +11,7 @@ export function VideoGrid({ videos }: VideoGridProps) {
   return (
     <div className="video-grid" data-testid="video-grid">
       {videos.map((video) => {
-        const previewFile = video.video_files.find(
-          (f) => f.quality === "sd" || f.quality === "hd",
-        );
+        const previewFile = video.video_files.find((f) => f.quality === "sd" || f.quality === "hd");
 
         return (
           <div key={video.id} className="video-grid__item">
